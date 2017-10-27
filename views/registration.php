@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
     <h1>Регистрация пользователя</h1>
     <h3>Пожалуйста, введите ниже свои данные для регистрации:</h3>
-    <form action="" onSubmit="valid(); " method="POST" id='formregs'>
+    <form onSubmit="valid(); " method="POST" id='formregs'>
       <div id="em">
         <label for="email" class="">Адрес электронной почты:</label>
         <input id="email_2" type="email" name="email" value="" size="15" placeholder="Email" />
@@ -28,7 +28,7 @@
         <label for="users_password" class="">Ваш пароль:</label>
         <input id="users_password_2" type="password" name="users_password" size="15" placeholder="Пароль"/>
       </div>
-      <div id="_users_password_2">
+      <div id="users_password_2">
         <label for="users_password_2" class="">Повторите Ваш пароль пожалуйста:</label>
         <input class="form-control" id="users_password_2_2" type="password" name="users_password_2"  size="15"  placeholder="Повторить Пароль"/>
       </div>
