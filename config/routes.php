@@ -1,5 +1,7 @@
 <?php
 return array(
 	'user' => 'user/registration',
-	'login'=> 'login/login',
+	'login' => 'login/login',
+	'welcome' => 'welcome/welcomePage',
+
 );
