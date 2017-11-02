@@ -1,7 +1,8 @@
 <?php
 return array(
-	'user' => 'user/registration',
-	'login' => 'login/login',
-	'welcome' => 'welcome/welcomePage',
+	'userRegist' => 'user/registration',
+	'userLogin' => 'user/login',
+	'userWelcom' => 'user/welcomePage',
+	'userLogout' => 'user/logout',
 
 );

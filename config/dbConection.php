@@ -1,4 +1,5 @@
 <?php 
-$username  = 'root';
-$password = '';
+	$db_name = 'mvc';
+	$username  = 'root';
+	$password = '';
 ?>

@@ -1,3 +1,13 @@
+<?php
+ob_start();
+  	if (!empty($_SESSION["users_id"])){
+  		header('Location: /user/welcomePage');
+  	}
+	if (!empty($_SESSION['succes'])){
+      	echo  "Регистрация прошла успешно!";
+      	// $_SESSION['succes']="";
+  	}
+?>
 <!DOCTYPE html>
 <html>
 	<html lang="ru">
@@ -6,6 +16,7 @@
 </head>
 <body>
  <h1>Добро пожаловать на наш сайт!</h1>
+ <h4> Пожалуйста, введите ниже Ваш логин и пароль или <a href="/user/registration">зарегистрируйтесь!</a></h4>
 	<form onSubmit="valid();" name="form" method="POST" id='form'> 
 	    <label for="users_login" >Логин</label>
 	    <div id="c_login">

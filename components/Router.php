@@ -13,9 +13,10 @@ class Router
 	public function run(){
 		$routesPath = ROOT.'/config/routes.php';
 		$this->routes = include($routesPath);
+
 		$uri = $this->getURI();
 		foreach ($this->routes as $uriPattern => $path) {
-			if(preg_match("~$uriPattern~", $uri)){
+			if( $path === $uri){
 
 				$segments = explode('/', $path);
 
