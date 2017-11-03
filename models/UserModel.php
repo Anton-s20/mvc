@@ -6,9 +6,9 @@ require_once ROOT."/models/DefaultModel.php";
         $hash = md5(date('H:i:s Y-m-d'));
         $activated =0;
         $query = " INSERT INTO users (first_name, last_name, email, users_login, users_password, activated, hash) 
-          VALUES (:first_name, :last_name, :email, :users_login, :users_password, :activated, :hash)";
+          VALUES (:qwe, :last_name, :email, :users_login, :users_password, :activated, :hash)";
             $result = $this->datab->prepare($query);
-            $result->bindParam(':first_name', $data['first_name'] , PDO:: PARAM_STR);
+            $result->bindParam(':qwe', $data['first_name'] , PDO:: PARAM_STR);
             $result->bindParam(':last_name', $data['last_name'] , PDO:: PARAM_STR);
             $result->bindParam(':email', $data['email'] , PDO:: PARAM_STR);
             $result->bindParam(':users_login', $data['users_login'] , PDO:: PARAM_STR);
@@ -25,7 +25,8 @@ require_once ROOT."/models/DefaultModel.php";
                 $users_login = trim($data ['users_login']);
                 $users_password = trim($data ['users_password']);
 
-                $query = "SELECT * FROM users WHERE users_login='$users_login' AND users_password='$users_password' ";
+                $query = "SELECT * FROM users WHERE ('users_login, users_password')
+                    VALUES (:users_login, :users_password)";
                 $result = $this->datab->prepare($query);
                 $result->bindParam(':users_login',    $users_login,PDO:: PARAM_STR);
                 $result->bindParam(':users_password', $users_password,PDO:: PARAM_INT);
@@ -34,6 +35,19 @@ require_once ROOT."/models/DefaultModel.php";
                 return $result->fetch(PDO::FETCH_ASSOC);
             }
         }
+
+        public function CheckEmail($email){
+            $email = trim($email);
+            $query = "SELECT * FROM users WHERE email=:email_placeholder";
+            $result = $this->datab->prepare($query);
+            $result->bindParam(':email_placeholder', $email, PDO:: PARAM_STR);
+            $result->execute();
+            $row = $result->rowCount();
+            return $row;
+            
+        }
+
+
 
     }
 

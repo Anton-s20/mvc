@@ -16,7 +16,7 @@ class Router
 
 		$uri = $this->getURI();
 		foreach ($this->routes as $uriPattern => $path) {
-			if( $path === $uri){
+			if(  strpos($uri, $path)  !== FALSE){
 
 				$segments = explode('/', $path);
 
@@ -25,7 +25,6 @@ class Router
 				$controllerName = ucfirst($controllerName);
 
 				$actionName = ucfirst((array_shift($segments)));
-
 				$controllerFile = ROOT . '/controllers/' .$controllerName. '.php';
 				if (file_exists($controllerFile)){
 					include_once($controllerFile);
@@ -35,6 +34,7 @@ class Router
 				if ($result != null){
 					break;
 				}
+
 			}
 		}
 	}

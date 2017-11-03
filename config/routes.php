@@ -4,5 +4,5 @@ return array(
 	'userLogin' => 'user/login',
 	'userWelcom' => 'user/welcomePage',
 	'userLogout' => 'user/logout',
-
+	'userCheckEmail'=> 'user/checkemail',
 );
