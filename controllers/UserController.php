@@ -1,6 +1,5 @@
 <?php
 class UserController{
-
 	public function Registration(){
 		require_once ROOT."/models/UserModel.php";
 		$succes = "Регистрация прошла успешно!";
@@ -20,7 +19,6 @@ class UserController{
 		$maxEmail_length = 15;
 			if (!filter_var($email , FILTER_VALIDATE_EMAIL)){
 			 	$array['incorrect_email']="Cтрокa Адрес электронной почты должна быть правильной!<br />";
-
 			}else if ($email_length <= $minEmail_length || $email_length >= $maxEmail_length){	
 				$array['incorrect_email']="Заполните полe Адрес электронной почты, не меньше 4-х символов и не больше 15!<br />";
 			}
@@ -107,7 +105,6 @@ class UserController{
  		session_destroy();
 		$_SESSION = array();
 		unset($_SESSION["users_id"]);
-		
 		header('Location: /user/login');
 	}
 	
@@ -161,7 +158,6 @@ class UserController{
 	public function CheckEmail(){
 		require_once ROOT."/models/UserModel.php";
 		$email = $_GET['email_2'];
-		
 		$userModel = new UserModel();
 		$emailFromModel = $userModel->CheckEmail($email);
 			$error = true;
@@ -177,7 +173,7 @@ class UserController{
 		    		'is_error' => $error,
 		    		'message' => $emailCheck
 		    	)
-		    );
+			);
 	}
 }
 ?>

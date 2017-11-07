@@ -1,5 +1,5 @@
 <?php  
-class DefaultModel {
+class DefaultModel{
 	public $datab;
     public function __construct(){
         require_once ROOT."/config/dbConection.php";

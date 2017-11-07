@@ -5,7 +5,6 @@ ob_start();
   	}
 	if (!empty($_SESSION['succes'])){
       	echo  "Регистрация прошла успешно!";
-      	// $_SESSION['succes']="";
   	}
 ?>
 <!DOCTYPE html>

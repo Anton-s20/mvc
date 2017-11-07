@@ -5,4 +5,5 @@ return array(
 	'userWelcom' => 'user/welcomePage',
 	'userLogout' => 'user/logout',
 	'userCheckEmail'=> 'user/checkemail',
+	'tvitterController' => 'tvitter/getFollowers',
 );

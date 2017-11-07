@@ -2,7 +2,6 @@
 
 class Router
 {
-
 	private $routes;
 
 	private function getURI(){
@@ -16,7 +15,7 @@ class Router
 
 		$uri = $this->getURI();
 		foreach ($this->routes as $uriPattern => $path) {
-			if(  strpos($uri, $path)  !== FALSE){
+			if(strpos($uri, $path)  !== FALSE){
 
 				$segments = explode('/', $path);
 
@@ -39,3 +38,4 @@ class Router
 		}
 	}
 }
+?>
