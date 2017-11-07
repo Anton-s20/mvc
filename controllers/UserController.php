@@ -119,11 +119,11 @@ class UserController{
 		    $users_password = trim($data['users_password']);
 			if ($users_login==""){
 		        $message ="error";
-		        echo $array['null_login']="Поле Логин не заполнено!";
+		        $array['null_login']="Поле Логин не заполнено!";
 		    }
 		    if ($users_password==""){
 		        $message ="error";
-		        echo $array['null_password']="Поле Пароль не заполнено!";
+		        $array['null_password']="Поле Пароль не заполнено!";
 		    }
 		    if ($message ==""){
 				$dataFromModel = $con->loginForm($data);
@@ -133,9 +133,9 @@ class UserController{
 		            $_SESSION['users_login'] = $users_login;
 		            header('Location: /user/welcomePage');
 		        }else{
-		           	echo "Неправильный логин или пароль!";
+		           	$array['incorrect_p_l']="Неправильный логин или пароль!";
 		        }
-		    }		
+		    }
 		}
 		require_once ROOT."/views/avto.php";   
 	}

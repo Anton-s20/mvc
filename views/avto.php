@@ -1,16 +1,18 @@
-<?php
+<?php 
+session_start();
 ob_start();
   	if (!empty($_SESSION["users_id"])){
   		header('Location: /user/welcomePage');
   	}
 	if (!empty($_SESSION['succes'])){
-      	echo  "Регистрация прошла успешно!";
+		 echo "Регистрация прошла успешно!";
+		session_destroy();
   	}
 ?>
 <!DOCTYPE html>
 <html>
 	<html lang="ru">
-<head>	
+<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	 <!-- jQuery -->
 	<script src="/vendors/jquery/jquery.js"></script>
@@ -27,10 +29,24 @@ ob_start();
 	    <label for="users_login" >Логин</label>
 	    <div id="c_login">
 	      	<input type="text" id="users_login" name="users_login" placeholder="Логин" >
+	      	<div>
+	      		<?php 
+          			echo isset($array['null_login'])? $array['null_login']:'';
+        		?>
+        	</div>
 	    </div>
 	    <label for="users_password">Пароль</label>
 	    <div id="c_password">
 	      	<input type="password" id="users_password" name="users_password" placeholder="Пароль" >
+	      	<div>
+	      		<?php 
+          			echo isset($array['null_password'])? $array['null_password']:'';
+        		?>
+        	</div>
+        		<?php 
+          			echo isset($array['incorrect_p_l'])? $array['incorrect_p_l']:'';
+        		?>
+        	</div>
 	    </div>
 	    <input type="submit" value="Вход">
 	</form>

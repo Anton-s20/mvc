@@ -28,7 +28,7 @@
 	    
 	    	<?php
 	    		echo  "<h3>Список подписчиков:</h3>";
-	    		if (isset($array) && !empty($array)) {
+	    		if (isset($array) && !empty($array)){
 	    			foreach($array as $users){
 	        			echo $users['name']."<br />";
 	        		}
